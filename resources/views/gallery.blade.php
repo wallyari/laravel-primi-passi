@@ -55,8 +55,6 @@
             a{
                 text-decoration: none;
                 color: red;
-
-
             }
             .m-b-md {
                 margin-bottom: 20px;
@@ -67,7 +65,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    <h4>{{$helloLaravel}}</h4>
+                   <h4>My Project Gallery</h4>
                 </div>
                 <ul class="links">
                 @foreach ($navBarLinks as $navBarLink)

@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('home', function () {
-    return view('home');
-});
+Route::get('/', function () {
+    $helloLaravel = 'Hello Laravel!';
+    $navBarLinks = ['Home', 'About', 'Blog', 'ProjectGallery'];
+    
+    return view('home', [
+        'helloLaravel' => $helloLaravel,
+        'navBarLinks' => $navBarLinks ]);
+
+})-> name('Home');
+
+Route::get('About', function() {
+    $navBarLinks = ['Home', 'About', 'Blog', 'ProjectGallery'];
+    return view('about', ['navBarLinks' => $navBarLinks]);
+})->name('About');
+
+Route::get('/Blog', function() {
+    $navBarLinks = ['Home', 'About', 'Blog', 'ProjectGallery',];
+    return view('blog', ['navBarLinks' => $navBarLinks]);
+})->name('Blog');
+
+Route::get('/ProjectGallery', function() {
+    $navBarLinks = ['Home', 'About', 'Blog', 'ProjectGallery',];
+    return view('gallery', ['navBarLinks' => $navBarLinks]);
+})->name('ProjectGallery');
